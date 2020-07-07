@@ -45,6 +45,8 @@ const About = () => {
 export default About;
 
 const Styles = styled.div`
+  height: 100vh;
+
   .about {
     padding-top: 150px;
   }

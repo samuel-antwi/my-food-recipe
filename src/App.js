@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Recipe from './pages/Recipe';
 import RecipeDetails from './pages/RecipeDetails';
 import About from './pages/About';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path='/details:name' component={RecipeDetails} />
           <Route path='/about' component={About} />
         </Switch>
+        <Footer />
       </Router>
     </div>
   );

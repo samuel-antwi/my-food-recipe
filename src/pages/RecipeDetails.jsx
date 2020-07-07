@@ -72,14 +72,18 @@ const RecipeDetails = ({ match }) => {
                       </p>
                     </div>
                   </div>
+                  <p>
+                    <span className='font-weight-bold'>Source:</span>{' '}
+                    {recipe.recipe.source}
+                  </p>
                   <p className='lead'>
-                    See more receipe details{' '}
+                    See more receipe details
                     <a
                       href={recipe.recipe.url}
                       className='text-muted'
                       target='_blank'
                       rel='noopener noreferrer'>
-                      <u>{recipe.recipe.source}</u>
+                      <u className='ml-2 text-info'>here</u>
                     </a>
                   </p>
                 </Col>
