@@ -1,8 +1,6 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, ListGroup, Col, Row } from 'react-bootstrap';
-// import { APIContext } from '../context/APIContext';
 import styled from 'styled-components';
-import FoodNotFound from '../components/FoodNotFound';
 import Loading from '../components/Loading';
 import axios from 'axios';
 import { BsArrowLeft } from 'react-icons/bs';
@@ -12,33 +10,24 @@ import Nutrients from '../components/Nutrients';
 import { v4 as uuidv4 } from 'uuid';
 
 const RecipeDetails = ({ match }) => {
-  // const { food, query } = useContext(APIContext);
   const [recipe, setRecipe] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   console.log(match);
-
-  // useEffect(() => {
-  //   if (food.length) {
-  //     const recipe = food.find(
-  //       (recipe) => recipe.recipe.label === match.params.id
-  //     );
-  //     setDetails(recipe);
-  //   }
-  //   setIsLoading(false);
-  // }, [query, match.params.id]);
-
   useEffect(() => {
+    const APP_KEY = '89fd9e5f3e9963a5b9c322412c9d2cea';
+    const APP_ID = '99eb0e07';
     const fetchFood = async () => {
       const response = await axios(
-        ` https://api.edamam.com/search?q=${match.params.name}&app_id=99eb0e07&app_key=
-    89fd9e5f3e9963a5b9c322412c9d2cea&from=0&to=9
+        ` https://api.edamam.com/search?q=${match.params.name}&app_id=${APP_ID}&app_key=
+    ${APP_KEY}&from=0&to=9
     `
       );
 
-      const recipe = response.data.hits.find((recipe) =>
-        recipe.recipe.label.includes(match.params.name)
+      const recipe = response.data.hits.find(
+        (recipe) => recipe.recipe.label === match.params.name
       );
+
       setRecipe(recipe);
       setIsLoading(false);
     };
