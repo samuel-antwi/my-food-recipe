@@ -53,30 +53,23 @@ const RecipeDetails = ({ match }) => {
             <div className='recipe-details'>
               <Row>
                 <Col>
+                  <h3 className=' font-weight-bold text-muted'>
+                    {recipe.recipe.label}
+                  </h3>
                   <div
-                    className='card-box bg-info mb-5'
+                    className='card-box bg-info mb-2'
                     md={6}
                     data-aos='fade-down'
                     data-aos-duration='1000'>
                     <div className='recipe-image'>
                       <img src={recipe.recipe.image} alt='' />
                     </div>
-                    <div className=' text-light p-4 text-center'>
-                      <h3 className=' font-weight-bold'>
-                        {recipe.recipe.label}
-                      </h3>
-                      <p className='lead'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Delectus vel dolor recusandae repellendus eius debitis
-                        ipsa velit fugiat. Architecto, fuga.
-                      </p>
-                    </div>
                   </div>
                   <p>
                     <span className='font-weight-bold'>Source:</span>{' '}
                     {recipe.recipe.source}
                   </p>
-                  <p className='lead'>
+                  <p>
                     See more receipe details
                     <a
                       href={recipe.recipe.url}
@@ -146,7 +139,7 @@ const Styles = styled.div`
       background: black;
       border-radius: 10px;
     }
-
+/* 
     .recipe-image {
       position: absolute;
       top: 0;
@@ -155,15 +148,15 @@ const Styles = styled.div`
       height: 100%;
       transition: 0.9s;
       z-index: 1;
-    }
-
+    } */
+/* 
     .card-box:hover .recipe-image {
       top: 20px;
       left: calc(50% - 40px);
       width: 0px;
       height: 0px;
       border-radius: 100%;
-    }
+    } */
 
     .more-info {
       display: flex;

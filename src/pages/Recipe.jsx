@@ -7,6 +7,9 @@ import { v4 as uuidv4 } from 'uuid';
 import Loading from '../components/Loading';
 import FoodNotFound from '../components/FoodNotFound';
 
+
+
+
 const Recipe = () => {
   const {
     food,
@@ -17,7 +20,7 @@ const Recipe = () => {
     handleChange,
   } = useContext(APIContext);
 
-  console.log(input);
+
 
   if (isLoading) {
     return <Loading />;
@@ -46,7 +49,7 @@ const Recipe = () => {
               )}
             </form>
           </div>
-          <Row>
+          <Row >
             {food.map((recipe) => (
               <RecipeGrid key={uuidv4()} recipe={recipe} />
             ))}
