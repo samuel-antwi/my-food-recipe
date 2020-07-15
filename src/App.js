@@ -6,6 +6,7 @@ import Recipe from './pages/Recipe';
 import RecipeDetails from './pages/RecipeDetails';
 import About from './pages/About';
 import Footer from './components/Footer';
+import PageNotFound from './pages/PageNotFound'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path='/recipe' component={Recipe} />
           <Route path='/details:name' component={RecipeDetails} />
           <Route path='/about' component={About} />
+          <Route component={PageNotFound} />
         </Switch>
         <Footer />
       </Router>

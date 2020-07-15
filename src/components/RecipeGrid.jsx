@@ -12,8 +12,6 @@ const RecipeGrid = ({ recipe }) => {
       <Styles>
         <div className='recipe-grid'>
           <Col
-            data-aos='fade-up'
-            data-aos-duration='1000'
             md={{ span: 10, offset: 1 }}
             className='mb-4'>
             <Link to={`/details${recipe.recipe.label}`}>
